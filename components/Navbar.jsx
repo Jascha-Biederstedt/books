@@ -18,7 +18,7 @@ const Navbar = () => {
             <Link href='/about/contact'>Contact</Link>
           </li>
           <li>
-            <Link href='/githubusers'>Github Users</Link>
+            <Link href='/githubusers'>GitHub Users</Link>
           </li>
         </ul>
       </div>
