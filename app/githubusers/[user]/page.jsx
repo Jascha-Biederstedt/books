@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserRepo = () => {
+const UserRepo = ({ params: { user } }) => {
   return <div>UserRepo</div>;
 };
 
