@@ -37,7 +37,9 @@ const Table = ({ users }) => {
                 </Link>
               </td>
 
-              <th>Go to Repos</th>
+              <th>
+                <Link href={`/githubusers/${user.login}`}>Go to Repos</Link>
+              </th>
             </tr>
           ))}
         </tbody>
