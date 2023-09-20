@@ -11,7 +11,7 @@ const Repos = async ({ user }) => {
 
   return (
     <div>
-      <h1>{user}'s Repos</h1>
+      <h1 className='p-4'>{user}'s Repos</h1>
       <div className='overflow-x-auto'>
         <table className='table w-full'>
           <thead>
