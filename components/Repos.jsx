@@ -11,8 +11,8 @@ const Repos = async ({ user }) => {
 
   return (
     <div>
-      <h1 className='p-4'>{user}'s Repos</h1>
-      <div className='overflow-x-auto'>
+      <h1 className='px-8 py-4 font-bold'>{user}'s Repos</h1>
+      <div className='overflow-x-auto px-4'>
         <table className='table w-full'>
           <thead>
             <tr>
