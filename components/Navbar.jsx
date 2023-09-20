@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Navbar = () => {
   return (
     <div className='navbar bg-base-100'>
-      <div className='flex-1'>
+      <div className='flex-1 px-2'>
         <Link href={'/'} className='btn btn-ghost normal-case text-xl'>
           Greg's Portfolio of Small Bets
         </Link>
