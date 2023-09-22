@@ -1,7 +1,11 @@
 import React from 'react';
 
 const fetchRepos = async user => {
-  const res = await fetch(`https://api.github.com/users/${user}/repos`);
+  const res = await fetch(`https://api.github.com/users/${user}/repos`, {
+    next: {
+      revalidate: 60,
+    },
+  });
   const data = res.json();
   return data;
 };
