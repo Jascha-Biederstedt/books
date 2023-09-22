@@ -3,7 +3,11 @@ import React from 'react';
 import Table from '@/components/Table';
 
 const fetchGitHubUsers = async () => {
-  const res = await fetch('https://api.github.com/search/users?q=greg');
+  const res = await fetch('https://api.github.com/search/users?q=greg', {
+    next: {
+      revalidate: 60,
+    },
+  });
   await new Promise(resolve => setTimeout(resolve, 2000));
   const data = await res.json();
   return data.items;
