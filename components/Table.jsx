@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Table = ({ users }) => {
   return (
-    <div className='overflow-x-auto'>
+    <div className='overflow-x-auto px-4'>
       <table className='table'>
         <thead>
           <tr>

@@ -13,7 +13,7 @@ const GitHubUsers = async () => {
 
   return (
     <div>
-      <h1>GitHub Users</h1>
+      <h1 className='px-8 py-4 font-bold'>GitHub Users</h1>
       <Table users={users} />
     </div>
   );
