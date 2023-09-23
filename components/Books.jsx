@@ -27,7 +27,12 @@ const Books = () => {
   const handleSubmit = async event => {
     event.preventDefault();
 
-    console.log(query);
+    setIsLoading(true);
+    const res = await fetch(`/api/books/search?query=${query}`);
+    const books = await res.json();
+
+    setBooks(books);
+    setIsLoading(false);
   };
 
   return (
