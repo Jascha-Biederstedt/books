@@ -1,5 +1,8 @@
-import React from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+
+import LoadingPage from '@/app/loading';
 
 const getBooks = async () => {
   const res = await fetch('http://localhost:3000/api/books');
@@ -7,8 +10,18 @@ const getBooks = async () => {
   return data;
 };
 
-const Books = async () => {
-  const books = await getBooks();
+const Books = () => {
+  const [books, setBooks] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    getBooks().then(books => {
+      setBooks(books);
+      setIsLoading(false);
+    });
+  }, []);
+
+  if (isLoading) return <LoadingPage />;
 
   return (
     <div>
