@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 import LoadingPage from '@/app/loading';
+import AddBook from './AddBook';
 
 const getBooks = async () => {
   const res = await fetch('http://localhost:3000/api/books');
@@ -38,7 +39,7 @@ const Books = () => {
   return (
     <div>
       <h1 className='text-center pt-8 pb-10 text-lg font-bold'>Books</h1>
-      <form onSubmit={handleSubmit} className='text-center mb-16'>
+      <form onSubmit={handleSubmit} className='text-center mb-10'>
         <input
           type='text'
           placeholder='Search Books...'
@@ -52,6 +53,9 @@ const Books = () => {
           Search
         </button>
       </form>
+
+      <AddBook />
+
       <div className='flex flex-wrap justify-center'>
         {books.map(book => (
           <div key={book.id} className='mx-4 mb-4 text-center'>

@@ -5,7 +5,7 @@ const AddBook = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <>
+    <div className='text-center mb-12'>
       <button className='btn' onClick={() => setModalOpen(true)}>
         Add Book
       </button>
@@ -25,7 +25,7 @@ const AddBook = () => {
           <h3 className='font-bold text-lg'>Add New Book</h3>
         </div>
       </dialog>
-    </>
+    </div>
   );
 };
 
