@@ -4,12 +4,16 @@ import React, { useState } from 'react';
 const AddBook = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [newBookTitle, setNewBookTitle] = useState('');
+  const [newBookImageLink, setNewBookImageLink] = useState('');
+  const [newBookAmazonLink, setNewBookAmazonLink] = useState('');
 
   const handleSubmitNewBook = event => {
     event.preventDefault();
 
-    console.log(newBookTitle);
+    console.log(newBookTitle, newBookAmazonLink, newBookImageLink);
     setNewBookTitle('');
+    setNewBookImageLink('');
+    setNewBookAmazonLink('');
   };
 
   return (
@@ -33,9 +37,23 @@ const AddBook = () => {
             <input
               type='text'
               placeholder='Enter New Book Title'
-              className='input input-bordered w-full max-w-xs mr-3'
+              className='input input-bordered w-full max-w-xs'
               value={newBookTitle}
               onChange={event => setNewBookTitle(event.target.value)}
+            />
+            <input
+              type='text'
+              placeholder='Enter New Book Image Link'
+              className='input input-bordered w-full max-w-xs'
+              value={newBookImageLink}
+              onChange={event => setNewBookImageLink(event.target.value)}
+            />
+            <input
+              type='text'
+              placeholder='Enter New Book Amazon Link'
+              className='input input-bordered w-full max-w-xs'
+              value={newBookAmazonLink}
+              onChange={event => setNewBookAmazonLink(event.target.value)}
             />
             <button type='submit' className='btn btn-primary'>
               Add Book
