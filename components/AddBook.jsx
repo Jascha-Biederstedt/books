@@ -28,6 +28,9 @@ const AddBook = () => {
             placeholder='Enter New Book Title'
             className='input input-bordered w-full max-w-xs'
           />
+          <button type='submit' className='btn btn-primary'>
+            Add Book
+          </button>
         </div>
       </dialog>
     </div>
