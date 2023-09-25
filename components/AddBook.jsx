@@ -34,30 +34,32 @@ const AddBook = () => {
               ✕
             </button>
             <h3 className='font-bold text-lg mb-4'>Add New Book</h3>
-            <input
-              type='text'
-              placeholder='Enter New Book Title'
-              className='input input-bordered w-full max-w-xs'
-              value={newBookTitle}
-              onChange={event => setNewBookTitle(event.target.value)}
-            />
-            <input
-              type='text'
-              placeholder='Enter New Book Image Link'
-              className='input input-bordered w-full max-w-xs'
-              value={newBookImageLink}
-              onChange={event => setNewBookImageLink(event.target.value)}
-            />
-            <input
-              type='text'
-              placeholder='Enter New Book Amazon Link'
-              className='input input-bordered w-full max-w-xs'
-              value={newBookAmazonLink}
-              onChange={event => setNewBookAmazonLink(event.target.value)}
-            />
-            <button type='submit' className='btn btn-primary'>
-              Add Book
-            </button>
+            <div className='flex flex-col items-center gap-4'>
+              <input
+                type='text'
+                placeholder='Enter New Book Title'
+                className='input input-bordered w-full max-w-xs'
+                value={newBookTitle}
+                onChange={event => setNewBookTitle(event.target.value)}
+              />
+              <input
+                type='text'
+                placeholder='Enter New Book Image Link'
+                className='input input-bordered w-full max-w-xs'
+                value={newBookImageLink}
+                onChange={event => setNewBookImageLink(event.target.value)}
+              />
+              <input
+                type='text'
+                placeholder='Enter New Book Amazon Link'
+                className='input input-bordered w-full max-w-xs'
+                value={newBookAmazonLink}
+                onChange={event => setNewBookAmazonLink(event.target.value)}
+              />
+              <button type='submit' className='btn btn-primary'>
+                Add Book
+              </button>
+            </div>
           </form>
         </div>
       </dialog>
