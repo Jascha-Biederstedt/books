@@ -15,8 +15,8 @@ const AddBook = ({ refreshBooks }) => {
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify({
         title: newBookTitle,
-        img: 'https://via.placeholder.com/600/92c952',
-        link: 'https://www.amazon.com/dp/B0979MGJ5J',
+        img: newBookImageLink,
+        link: newBookAmazonLink,
       }),
     });
 
