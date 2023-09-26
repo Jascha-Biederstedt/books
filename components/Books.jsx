@@ -16,11 +16,16 @@ const Books = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [query, setQuery] = useState('');
 
+  const fetchBooks = async () => {
+    const res = await fetch('/api/books');
+    const data = await res.json();
+
+    setBooks(data);
+    setIsLoading(false);
+  };
+
   useEffect(() => {
-    getBooks().then(books => {
-      setBooks(books);
-      setIsLoading(false);
-    });
+    fetchBooks();
   }, []);
 
   if (isLoading) return <LoadingPage />;
@@ -54,7 +59,7 @@ const Books = () => {
         </button>
       </form>
 
-      <AddBook />
+      <AddBook refreshBooks={fetchBooks} />
 
       <div className='flex flex-wrap justify-center'>
         {books.map(book => (

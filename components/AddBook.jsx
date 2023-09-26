@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 
-const AddBook = () => {
+const AddBook = ({ refreshBooks }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [newBookTitle, setNewBookTitle] = useState('');
   const [newBookImageLink, setNewBookImageLink] = useState('');
@@ -23,6 +23,7 @@ const AddBook = () => {
     if (res.ok) {
       setNewBookTitle('');
       setModalOpen(false);
+      refreshBooks();
     }
   };
 
