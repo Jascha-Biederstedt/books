@@ -69,8 +69,7 @@ const Books = () => {
                 <img src={book.img} width='200' height='150' alt='book cover' />
               </figure>
               <div className='card-body'>
-                <p className='card-title mx-auto'>{book.id}</p>
-                <p className='mb-6 font-bold'>{book.title}</p>
+                <p className='mb-6 font-bold text-lg'>{book.title}</p>
                 <div className='card-actions justify-between'>
                   <Link href={book.link} className='btn btn-primary'>
                     See in Amazon
