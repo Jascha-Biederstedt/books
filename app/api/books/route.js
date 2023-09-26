@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { v4 as uuidv4 } from 'uuid';
 
 import books from './data.json';
 
@@ -10,7 +11,7 @@ export const POST = async req => {
   const { title, link, img } = await req.json();
 
   const newBook = {
-    id: books.length + 1,
+    id: uuidv4(),
     title,
     link,
     img,
