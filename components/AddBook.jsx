@@ -7,13 +7,23 @@ const AddBook = () => {
   const [newBookImageLink, setNewBookImageLink] = useState('');
   const [newBookAmazonLink, setNewBookAmazonLink] = useState('');
 
-  const handleSubmitNewBook = event => {
+  const handleSubmitNewBook = async event => {
     event.preventDefault();
 
-    console.log(newBookTitle, newBookAmazonLink, newBookImageLink);
-    setNewBookTitle('');
-    setNewBookImageLink('');
-    setNewBookAmazonLink('');
+    const res = await fetch('/api/books', {
+      method: 'POST',
+      headers: { 'Content-type': 'application/json' },
+      body: JSON.stringify({
+        title: newBookTitle,
+        img: 'https://via.placeholder.com/600/92c952',
+        link: 'https://www.amazon.com/dp/B0979MGJ5J',
+      }),
+    });
+
+    if (res.ok) {
+      setNewBookTitle('');
+      setModalOpen(false);
+    }
   };
 
   return (
