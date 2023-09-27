@@ -41,6 +41,14 @@ const Books = () => {
     setIsLoading(false);
   };
 
+  const deleteBook = async id => {
+    const res = await fetch(`api/books/${id}`, {
+      method: 'DELETE',
+    });
+
+    fetchBooks();
+  };
+
   return (
     <div>
       <h1 className='text-center pt-8 pb-10 text-lg font-bold'>Books</h1>
@@ -74,7 +82,12 @@ const Books = () => {
                   <Link href={book.link} className='btn btn-primary'>
                     See in Amazon
                   </Link>
-                  <button className='btn btn-error'>Delete</button>
+                  <button
+                    onClick={() => deleteBook(book.id)}
+                    className='btn btn-error'
+                  >
+                    Delete
+                  </button>
                 </div>
               </div>
             </div>
