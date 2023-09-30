@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Table from '@/components/Table';
+import Table from 'components/Table';
 
 const fetchGitHubUsers = async () => {
   const res = await fetch('https://api.github.com/search/users?q=greg', {

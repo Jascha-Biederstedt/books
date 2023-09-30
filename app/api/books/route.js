@@ -1,10 +1,23 @@
 import { NextResponse } from 'next/server';
 import { v4 as uuidv4 } from 'uuid';
-
-import books from './data.json';
+import prisma from '../../db';
 
 export const GET = async req => {
-  return NextResponse.json(books);
+  await prisma.book.create({
+    data: {
+      title: 'Prisma book',
+      link: 'https://www.amazon.com/dp/B0BXMRB5VF',
+      img: 'https://via.placeholder.com/600/92c952',
+    },
+  });
+
+  return NextResponse.json('test');
+
+  // const books = await prisma.book.findMany();
+
+  // console.log('GET books called');
+
+  // return NextResponse.json(books);
 };
 
 export const POST = async req => {

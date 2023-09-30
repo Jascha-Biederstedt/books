@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-import LoadingPage from '@/app/loading';
+import LoadingPage from 'app/loading';
 import AddBook from './AddBook';
 
 const getBooks = async () => {
