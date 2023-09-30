@@ -11,13 +11,11 @@ export const GET = async req => {
     },
   });
 
-  return NextResponse.json('test');
+  const books = await prisma.book.findMany();
 
-  // const books = await prisma.book.findMany();
+  console.log('GET books called');
 
-  // console.log('GET books called');
-
-  // return NextResponse.json(books);
+  return NextResponse.json(books);
 };
 
 export const POST = async req => {
