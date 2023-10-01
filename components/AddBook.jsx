@@ -22,6 +22,8 @@ const AddBook = ({ refreshBooks }) => {
 
     if (res.ok) {
       setNewBookTitle('');
+      setNewBookImageLink('');
+      setNewBookAmazonLink('');
       setModalOpen(false);
       refreshBooks();
     }
