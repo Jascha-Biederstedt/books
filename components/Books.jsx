@@ -5,12 +5,6 @@ import Link from 'next/link';
 import LoadingPage from 'app/loading';
 import AddBook from './AddBook';
 
-const getBooks = async () => {
-  const res = await fetch('http://localhost:3000/api/books');
-  const data = await res.json();
-  return data;
-};
-
 const Books = () => {
   const [books, setBooks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
