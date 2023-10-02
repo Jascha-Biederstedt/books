@@ -77,7 +77,7 @@ const Books = () => {
                     See in Amazon
                   </Link>
                   <button
-                    onClick={() => deleteBook(book.id)}
+                    // onClick={() => deleteBook(book.id)}
                     className='btn btn-error'
                   >
                     Delete
