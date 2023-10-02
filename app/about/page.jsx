@@ -5,7 +5,11 @@ export const metadata = {
 };
 
 const About = () => {
-  return <div>About</div>;
+  return (
+    <div>
+      <h1 className='px-8 py-4 font-bold'>About</h1>
+    </div>
+  );
 };
 
 export default About;
