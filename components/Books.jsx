@@ -83,6 +83,7 @@ const Books = () => {
                     Delete
                   </button>
                 </div>
+                <p className='text-right mr-2'>(Disabled)</p>
               </div>
             </div>
             <br />
