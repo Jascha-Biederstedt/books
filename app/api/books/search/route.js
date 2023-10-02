@@ -7,7 +7,7 @@ export const GET = async req => {
   const query = searchParams.get('query');
 
   const filteredBooks = await prisma.book.findMany({
-    where: { title: { contains: query } },
+    where: { title: { contains: query, mode: 'insensitive' } },
   });
 
   return NextResponse.json(filteredBooks);
